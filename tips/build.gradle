@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id "com.vanniktech.maven.publish" version "0.35.0"
 }
 
 android {
@@ -38,4 +39,51 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
+}
+
+mavenPublishing {
+    coordinates("com.github.JG-Rtp", "Tips", "1.0.0")
+
+    pom {
+        name = 'Android Tips View Library'
+        description = 'Tips 是一个基于 Overlay 的自定义卡片弹窗组件，用来替代传统 Dialog / AlertDialog'
+        url = 'https://github.com/JG-Rtp/Tips'
+        inceptionYear = '2025'
+
+        organization {
+            name = 'JG-Rtp'
+            url = 'https://github.com/JG-Rtp'
+        }
+
+        licenses {
+            license {
+                name = 'The Apache License, Version 2.0'
+                url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                distribution = 'repo'
+            }
+        }
+
+        developers {
+            developer {
+                id = 'JG-Rtp'
+                name = '敬故'
+                email = 'jg-Rtp@outlook.com'
+                organizationUrl = 'https://github.com/JG-Rtp'
+            }
+
+            developer {
+                id = 'OneYak'
+                name = 'kawis'
+                email = 'superbigAK@gmail.com'
+                organizationUrl = 'https://github.com/OneYak'
+            }
+        }
+
+        scm {
+            connection = 'scm:git:github.com/JG-Rtp/Tips.git'
+            developerConnection = 'scm:git:ssh://github.com/JG-Rtp/Tips.git'
+            url = 'https://github.com/JG-Rtp/Tips'
+            tag = 'v1.0.0'
+        }
+    }
 }
