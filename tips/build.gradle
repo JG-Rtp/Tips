@@ -42,7 +42,7 @@ dependencies {
 }
 
 mavenPublishing {
-    coordinates("com.github.JG-Rtp", "Tips", "1.0.0")
+    coordinates("com.github.JG-Rtp", "Tips", "1.0.1-alpha1")
 
     pom {
         name = 'Android Tips View Library'
@@ -83,7 +83,7 @@ mavenPublishing {
             connection = 'scm:git:github.com/JG-Rtp/Tips.git'
             developerConnection = 'scm:git:ssh://github.com/JG-Rtp/Tips.git'
             url = 'https://github.com/JG-Rtp/Tips'
-            tag = 'v1.0.0'
+            tag = 'v1.0.1-alpha1'
         }
     }
 }
