@@ -2,6 +2,7 @@ package io.github.kawis.tips
 
 import android.app.Activity
 import android.content.Context
+import android.view.View
 
 /**
  * 类似 MaterialAlertDialogBuilder 的用法，但使用自定义的 Tips 弹窗样式和动画。
@@ -32,6 +33,7 @@ class TipsDialogBuilder(private val context: Context) {
     private var iconResId: Int? = null
     private var showIcon: Boolean = false
     private var customViewLayoutResId: Int? = null
+    private var onCustomViewCreated: ((View) -> Unit)? = null
 
     private var positiveListener: (() -> Unit)? = null
     private var negativeListener: (() -> Unit)? = null
@@ -81,6 +83,12 @@ class TipsDialogBuilder(private val context: Context) {
      */
     fun setView(layoutResId: Int): TipsDialogBuilder = apply {
         customViewLayoutResId = layoutResId
+        onCustomViewCreated = null
+    }
+
+    fun setView(layoutResId: Int, onBind: (View) -> Unit): TipsDialogBuilder = apply {
+        customViewLayoutResId = layoutResId
+        onCustomViewCreated = onBind
     }
 
     /**
@@ -127,6 +135,7 @@ class TipsDialogBuilder(private val context: Context) {
             iconResId = iconResId,
             showIcon = showIcon,
             customViewLayoutResId = customViewLayoutResId,
+            onCustomViewCreated = onCustomViewCreated,
             onConfirm = {
                 positiveListener?.invoke()
             },

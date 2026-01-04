@@ -55,6 +55,7 @@ object TipsOverlayManager {
         iconResId: Int? = null,
         showIcon: Boolean = false,
         customViewLayoutResId: Int? = null,
+        onCustomViewCreated: ((View) -> Unit)? = null,
         onConfirm: (() -> Unit)? = null,
         onCancel: (() -> Unit)? = null
     ) {
@@ -111,7 +112,8 @@ object TipsOverlayManager {
 
         if (customViewLayoutResId != null) {
             defaultContentContainer.visibility = View.GONE
-            LayoutInflater.from(activity).inflate(customViewLayoutResId, cardView, true)
+            val customRoot = LayoutInflater.from(activity).inflate(customViewLayoutResId, cardView, true)
+            onCustomViewCreated?.invoke(customRoot)
         }
 
         val confirmBtn = cardView.findViewById<TextView>(R.id.one_confirm_button)
