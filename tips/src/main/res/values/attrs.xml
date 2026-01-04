@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TipsCardContainer">
+        <!-- 圆角大小 -->
+        <attr name="tipsCardRadius" format="dimension" />
+
+        <!-- 内层白色卡片背景颜色 -->
+        <attr name="tipsCardBackgroundColor" format="color" />
+
+        <!-- 白色卡片与外层卡片之间的间距（外边距） -->
+        <attr name="tipsStrokeWidth" format="dimension" />
+
+        <!-- 外层卡片颜色 -->
+        <attr name="tipsStrokeColor" format="color" />
+
+        <!-- 阴影大小（模糊半径） -->
+        <attr name="tipsElevation" format="dimension" />
+    </declare-styleable>
+</resources>
+

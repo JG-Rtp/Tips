@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="card_default_background">#D6DAE3</color>
+    <color name="card_default_shadow">#0DFFFFFF</color>
+    <color name="divider_color">#E5E6E8</color>
+</resources>
